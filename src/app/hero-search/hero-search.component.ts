@@ -12,12 +12,15 @@ import { HeroService } from '../hero.service';
 })
 export class HeroSearchComponent implements OnInit {
   heroes$: Observable<Hero[]>;
+  value=""
   private searchTerms = new Subject<string>()
   constructor(private heroService: HeroService) { }
   search(term:string):void{
     this.searchTerms.next(term)
   }
-
+  update(value:string){
+    this.value=value
+  }
   ngOnInit(): void {
     this.heroes$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term

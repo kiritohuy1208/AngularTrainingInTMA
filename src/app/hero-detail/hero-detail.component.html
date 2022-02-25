@@ -8,4 +8,11 @@
     </div>
     <button (click)="goBack()">go back</button>
     <button (click)="save()">save</button>
-  </div>
+    <button (click)="Toggle()">Toggle</button>
+    <app-test *ngIf="isToggle" [hero]="hero"
+          (voted)="onVoted($event)"
+    >
+      <h2 #projectedContent>TMA solutions</h2>
+      <h3 #contentChild>TMA solutions 2</h3>
+    </app-test>
+</div>

@@ -45,7 +45,7 @@ import { HeroService }  from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
-
+  //hero:Hero
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -54,6 +54,7 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHero();
+   
   }
 
   getHero(): void {
@@ -69,5 +70,13 @@ export class HeroDetailComponent implements OnInit {
  save(): void {
     this.heroService.updateHero(this.hero)
       .subscribe(() => this.goBack());
+  }
+  isToggle=false
+  Toggle():void{
+    this.isToggle = !this.isToggle
+  }
+  onVoted(agreed:Hero){
+    console.log("-------------------------")
+    console.log("agreed"+agreed.name)
   }
 }

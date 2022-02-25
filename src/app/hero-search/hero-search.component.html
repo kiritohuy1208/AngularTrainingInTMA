@@ -3,7 +3,11 @@
     <h4><label for="search-box">Hero Search</label></h4>
   
     <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-  
+    <h2>on Blur</h2>
+    <input #box  (keyup.enter)="update(box.value)"
+            (blur) ="update(box.value)"
+    />
+    <p>{{value}}</p>
     <ul class="search-result">
       <li *ngFor="let hero of heroes$ | async" >
         <a routerLink="/detail/{{hero.id}}">
