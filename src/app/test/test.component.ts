@@ -32,7 +32,9 @@ export class TestComponent implements
     this.voted.emit(agreed);
    
   }
-
+  onRemoteFarent(){
+    console.log("Remote it")
+  }
   ngOnChanges(changes: SimpleChanges): void {
       console.log(changes)
   }

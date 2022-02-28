@@ -8,9 +8,11 @@
     </div>
     <button (click)="goBack()">go back</button>
     <button (click)="save()">save</button>
-    <button (click)="Toggle()">Toggle</button>
-    <app-test *ngIf="isToggle" [hero]="hero"
+    <button (click)="Toggle()" >Toggle</button>
+    <button (click)="timer.onRemoteFarent()" >Call method function to child</button>
+    <app-test  [hero]="hero"   #timer [isToggle]="isToggle"
           (voted)="onVoted($event)"
+        
     >
       <h2 #projectedContent>TMA solutions</h2>
       <h3 #contentChild>TMA solutions 2</h3>
